@@ -2,6 +2,11 @@ html{
 	background-color: #91D5DA;
 }
 
-h1{
-	color: #F7934B;
+div.content{
+	display: flex;
+	align-items: center;
+}
+
+.thumb-img{
+	width: 25%;
 }

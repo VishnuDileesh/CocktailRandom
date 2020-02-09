@@ -15,13 +15,34 @@ def getRandomCocktail():
 
     cocktail_thumb = cocktail['drinks'][0]['strDrinkThumb']
 
-    print(cocktail_thumb)
+    ingredients = []
+
+    i = 1
+
+    while i <= 15:
+
+        cocktail_ingredient = cocktail['drinks'][0]['strIngredient' + str(i)]
+
+        if cocktail_ingredient != None:
+            ingredients.append(cocktail_ingredient)
+
+
+        i += 1
+
+
+    print(ingredients)
+
+    cocktail = {'name':cocktail_name, 'thumb':cocktail_thumb, 'ingredients':ingredients}
+
+    return cocktail
 
 @app.route('/')
 def index(): 
 
     getRandomCocktail()
 
-    return render_template('index.html')
+    data = getRandomCocktail()
+
+    return render_template('index.html', data=data)
 
 
