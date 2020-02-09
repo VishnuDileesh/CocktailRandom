@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import requests
 
 app = Flask(__name__)
@@ -22,6 +22,6 @@ def index():
 
     getRandomCocktail()
 
-    return "Hello World"
+    return render_template('index.html')
 
 
