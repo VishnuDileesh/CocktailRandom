@@ -17,22 +17,28 @@ def getRandomCocktail():
 
     ingredients = []
 
+    measurements = []
+
     i = 1
 
     while i <= 15:
 
         cocktail_ingredient = cocktail['drinks'][0]['strIngredient' + str(i)]
 
+        cocktail_measure = cocktail['drinks'][0]['strMeasure' + str(i)]
+
         if cocktail_ingredient != None:
             ingredients.append(cocktail_ingredient)
 
 
+        if cocktail_measure != None:
+            measurements.append(cocktail_measure)
+
         i += 1
 
 
-    print(ingredients)
 
-    cocktail = {'name':cocktail_name, 'thumb':cocktail_thumb, 'ingredients':ingredients}
+    cocktail = {'name':cocktail_name, 'thumb':cocktail_thumb, 'ingredients':ingredients, 'measurements': measurements}
 
     return cocktail
 
