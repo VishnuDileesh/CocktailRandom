@@ -37,8 +37,11 @@ def getRandomCocktail():
         i += 1
 
 
+    cocktail_instructions = cocktail['drinks'][0]['strInstructions']
 
-    cocktail = {'name':cocktail_name, 'thumb':cocktail_thumb, 'ingredients':ingredients, 'measurements': measurements}
+    cocktail_category = cocktail['drinks'][0]['strCategory']
+
+    cocktail = {'name':cocktail_name, 'thumb':cocktail_thumb, 'ingredients':ingredients, 'measurements': measurements, 'instructions':cocktail_instructions, 'category':cocktail_category}
 
     return cocktail
 
